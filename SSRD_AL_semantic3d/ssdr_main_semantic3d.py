@@ -126,9 +126,10 @@ if __name__ == '__main__':
             begin_time = time.time()
             w = {"sp_num": 0, "p_num": 0, "p_num_list": [], "sp_id_list": [], "sub_num": 0,
                  "sub_p_num": 0, "ignore_sp_num": 0, "split_sp_num": 0}
-            if r == 2 and "gcn_fps" in sampler_args and "NAIL" in sampler_args:
-                pass
-            else:
+            #if r == 2 and "gcn_fps" in sampler_args and "NAIL" in sampler_args:
+            #    pass
+            #else:
+            if True:
                 Sampler.sampling(model=model, batch_size=sp_batch_size, last_round=r-1, w=w, threshold=threshold, gcn_gpu=1)
                 labeling_region_num = w["sp_num"] + w["split_sp_num"]
                 labeling_point_num = w["p_num"] + w["sub_p_num"]
