@@ -8,7 +8,7 @@ from sklearn.neighbors import KDTree
 from helper_ply import read_ply
 from kcenterGreedy import *
 
-fps_gpu = 1
+fps_gpu = 0
 
 def create_cd_cuda(superpoint_list, superpoint_centroid_list, chamLoss):
     sp_num = len(superpoint_list)
