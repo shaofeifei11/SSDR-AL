@@ -118,11 +118,11 @@ if __name__ == '__main__':
 
         # sp_batch_size = int(math.ceil(total_sp_num * 3.0 / 100))
 
-        sp_batch_size = 10000
+        sp_batch_size = 3000
 
         model = Network(cfg, dataset_name, sampler_args, test_area, reg_strength=reg_strength)
-        model.restore_model(round_num=round_num - 1)
         for r in range(round_num, 34):
+            model.restore_model(round_num=r - 1)
             begin_time = time.time()
             w = {"sp_num": 0, "p_num": 0, "p_num_list": [], "sp_id_list": [], "sub_num": 0,
                  "sub_p_num": 0, "ignore_sp_num": 0, "split_sp_num": 0}
